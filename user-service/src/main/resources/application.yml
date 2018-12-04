@@ -12,7 +12,7 @@ mybatis:
   type-aliases-package: com.lee.domain
 
 server:
-  port: 8082
+  port: 8083
 
 eureka:
   client:

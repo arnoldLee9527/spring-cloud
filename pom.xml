@@ -12,6 +12,7 @@
         <module>user-client</module>
         <module>user-eureka</module>
         <module>user-eureka2</module>
+        <module>zuul</module>
     </modules>
 
     <packaging>pom</packaging>

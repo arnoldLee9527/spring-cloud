@@ -16,6 +16,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserById(Long id) {
+        long time = (long) (Math.random() * 2000 + 1);
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         User user = userMapper.selectByPrimaryKey(id);
         return user;
     }

@@ -12,3 +12,19 @@ eureka:
 spring:
   application:
     name: user-client
+
+logging:
+  level:
+    com.lee: debug
+
+user-service:
+  ribbon:
+    ConnectTimeout: 250
+    ReadTimeout: 1000
+
+
+feign:
+  hystrix:
+    enabled: true # 开启Feign的熔断功能
+
+
