@@ -7,8 +7,9 @@ spring:
 
 
 zuul:
+  prefix: /api
   routes:
-    user-service: /user-service/** # 这里是路由id，随意写
+    user-service: /** # 这里是路由id，随意写
 #      path: /user-service/** # 这里是映射路径
 #      url: http://127.0.0.1:8083 # 映射路径对应的实际url地址
 

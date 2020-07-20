@@ -17,7 +17,9 @@ public class UserController {
 
     @RequestMapping("findUser/{id}")
     public User findUserById(@PathVariable Long id){
-        User user = userService.findUserById(id);
+        //User user = userService.findUserById(id);
+        User user = new User();
+        user.setUserName("123");
         return user;
     }
 
