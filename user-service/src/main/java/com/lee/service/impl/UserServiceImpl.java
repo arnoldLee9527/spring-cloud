@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User findUserById(Long id) {
+    public User findUserById(String userName) {
         long time = (long) (Math.random() * 2000 + 1);
         try {
             Thread.sleep(time);
@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
 
-        User user = userMapper.selectByPrimaryKey(id);
+        User user = userMapper.selectByPrimaryKey(userName);
         return user;
     }
 }

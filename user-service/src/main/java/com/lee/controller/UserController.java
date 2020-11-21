@@ -1,6 +1,8 @@
 package com.lee.controller;
+import java.util.Date;
 
 import com.lee.domain.User;
+import com.lee.domain.baseDomain.ReturnDomain;
 import com.lee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,13 +18,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("findUser/{id}")
-    @CrossOrigin
-    public User findUserById(@PathVariable Long id){
-        //User user = userService.findUserById(id);
-        User user = new User();
-        user.setUserName("123");
-        return user;
+    @RequestMapping("findUser/{userName}")
+    public ReturnDomain<User> findUserById(@PathVariable String userName){
+        ReturnDomain<User> returnDomain = null;
+        returnDomain = new ReturnDomain<>();
+        try {
+            User user = userService.findUserById(userName);
+            returnDomain.setReturnCode(0);
+            returnDomain.setReturnDomain(user);
+        } catch (Exception e) {
+            returnDomain.setReturnCode(-1);
+            returnDomain.setReturnMsg("系统异常！");
+        }
+        return returnDomain;
     }
 
 }

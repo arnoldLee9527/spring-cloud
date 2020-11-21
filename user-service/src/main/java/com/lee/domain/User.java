@@ -12,42 +12,60 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
-    // 用户名
+    /**
+     * 用户名
+     */
+    @Id
     private String userName;
 
-    // 密码
+    /**
+     * 密码
+     */
     private String password;
 
-    // 姓名
+    /**
+     * 姓名
+     */
     private String name;
 
-    // 年龄
+    /**
+     * 年龄
+     */
     private Integer age;
 
-    // 性别，1男性，2女性
+    /**
+     * 性别，1男性，2女性
+     */
     private Integer sex;
 
-    // 出生日期
+    /**
+     * 出生日期
+     */
     private Date birthday;
 
-    // 创建时间
-    private Date created;
+    /**
+     * 创建时间
+     */
+    private Date createDatetime;
 
-    // 更新时间
-    private Date updated;
+    /**
+     * 更新时间
+     */
+    private Date updateDatetime;
 
-    // 备注
+    /**
+     * 备注
+     */
     private String note;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -99,20 +117,20 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    public Date getCreated() {
-        return created;
+    public Date getCreateDatetime() {
+        return createDatetime;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setCreateDatetime(Date createDatetime) {
+        this.createDatetime = createDatetime;
     }
 
-    public Date getUpdated() {
-        return updated;
+    public Date getUpdateDatetime() {
+        return updateDatetime;
     }
 
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setUpdateDatetime(Date updateDatetime) {
+        this.updateDatetime = updateDatetime;
     }
 
     public String getNote() {
