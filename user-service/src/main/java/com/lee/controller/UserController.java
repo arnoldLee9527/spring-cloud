@@ -22,6 +22,7 @@ public class UserController {
     public ReturnDomain<User> findUserById(@PathVariable String userName){
         ReturnDomain<User> returnDomain = null;
         returnDomain = new ReturnDomain<>();
+        
         try {
             User user = userService.findUserById(userName);
             returnDomain.setReturnCode(0);
